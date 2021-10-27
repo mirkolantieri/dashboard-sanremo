@@ -1,0 +1,45 @@
+stages:
+  - test
+  - docs
+
+test-react:
+ stage: test
+ image: node:latest
+ script:
+   - echo "Test unit for react"
+   - cd dashboard-sanremo-frontend
+   - npm install
+   - npm test
+   - echo 'Done'
+ allow_failure: false
+ 
+test-python:
+ stage: test
+ image: python:3
+ script:
+   - echo 'Test unit for python'
+   - pip3 install -r ./dashboard-sanremo-backend/requirements.txt
+   - cd dashboard-sanremo-backend
+   - python test_entrypoint.py
+   - echo 'Done'
+ allow_failure : false
+
+pages:
+  stage: docs
+  image: nikolaik/python-nodejs:latest
+  script:
+    - cd public && mkdir frontend && mkdir backend && cd ..
+
+    - cd dashboard-sanremo-frontend
+    - npm install jsdoc
+    - npm run doc
+    - cp -a docs/. ../public/frontend/
+
+    - cd ../dashboard-sanremo-backend
+    - pip install -r requirements.txt
+    - pdoc --html --output-dir ./docs --force .
+    - cp -a docs/dashboard-sanremo-backend/. ../public/backend/
+
+  artifacts:
+    paths:
+      - public/

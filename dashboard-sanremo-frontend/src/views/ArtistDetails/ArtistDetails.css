@@ -1,0 +1,49 @@
+.img {
+  float: right;
+  margin-bottom: 10px;
+  margin-right: 20px;
+}
+
+.box1{
+  box-shadow: 3px 3px 20px -11px rgba(46,46,46,0.79);
+  margin-bottom: 20px;
+  padding: 20px;
+  margin-top: 20px;
+  text-align: justify;
+  display: flex;
+  align-items: center;
+  overflow: auto;
+}
+
+.box2{
+  box-shadow: 3px 3px 20px -11px rgba(46,46,46,0.79);
+  margin-bottom: 20px;
+  margin-top: 20px;
+  padding: 20px;
+  text-align: justify;
+  overflow: auto;
+}
+
+.divider {
+  margin-bottom: 20px;
+}
+
+.lyrics{
+  width: 100%; /*Use this to control width of the parent container, hence the image*/
+  text-align: center;
+}
+
+.title{
+  width: 100%; /*Use this to control width of the parent container, hence the image*/
+  font-size: 30px;
+  text-align: center;
+}
+
+.sezione{
+  font-size: 20px;
+}
+
+.insieme{
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+}

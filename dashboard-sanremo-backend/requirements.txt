@@ -1,0 +1,11 @@
+Flask
+pdoc3
+pandas
+requests
+beautifulsoup4
+git+https://github.com/JustAnotherArchivist/snscrape.git
+googlesearch-python
+lyricsgenius
+Unidecode
+lxml
+googlesearch-python
